@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/audit.schema.json",
+  "title": "audit results",
+  "description": "Golden rules audit for a single cluster",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer",
+      "default": 1,
+      "title": "schema version",
+      "minimum": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "audit generation timestamp",
+      "format": "date-time"
+    },
+    "organisation": {
+      "type": "string",
+      "title": "nom socle/cluster",
+      "enum": ["cagip", "bcr", "bpc"]
+    },
+    "entite": {
+      "type": "string",
+      "title": "nom entite",
+      "enum": ["cats", "lcl"]
+    },
+    "zone": {
+      "type": "string",
+      "title": "network zone name",
+      "enum": ["intranet", "extranet"]
+    },
+    "produit": {
+      "type": "string",
+      "title": "nom du produit",
+      "examples": [
+        "kubernative"
+      ]
+    },
+    "environnement": {
+      "type": "string",
+      "default": "prd",
+      "title": "the environnement type amongst prd/hprd",
+      "enum": ["prd", "hprd"]
+    },
+    "cluster_name": {
+      "type": "string",
+      "title": "the name of the cluster"
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "resource": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9!@#\\$%\\^&\\*\\(\\)_\\+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+$"
+            },
+            "state": {
+              "type": "string",
+              "enum": ["fail", "pass"],
+              "default": "fail"
+            },
+            "message": {
+              "type": "string"
+            },
+            "cmdb_link": {
+              "type": "string"
+            }
+          },
+          "required": ["resource", "state", "message"]
+        }
+      }
+    }
+  },
+  "required": [
+    "version",
+    "timestamp",
+    "organisation",
+    "entite",
+    "zone",
+    "produit",
+    "environnement",
+    "cluster_name",
+    "controls"
+  ]
+}

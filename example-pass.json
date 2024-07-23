@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "timestamp": "2024-07-23T10:20:30Z",
+  "organisation": "cagip",
+  "entite": "cats",
+  "zone": "intranet",
+  "produit": "kubernative",
+  "environnement": "prd",
+  "cluster_name": "cluster1",
+  "controls": {
+    "control1": [
+      {
+        "resource": "namespace1/resource1",
+        "state": "pass",
+        "message": "All good",
+        "cmdb_link": "http://link_to_cmdb"
+      },
+      {
+        "resource": "namespace2/resource2",
+        "state": "fail",
+        "message": "Issue found"
+      }
+    ],
+    "control2": [
+      {
+        "resource": "namespace1/resource3",
+        "state": "fail",
+        "message": "Another issue"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+
+{
+  "version": 1,
+  "timestamp": "2024-07-23T10:20:30Z",
+  "organisation": "cagip",
+  "entite": "cats",
+  "zone": "intranet",
+  "produit": "kubernative",
+  "environnement": "prd",
+  "cluster_name": "cluster1",
+  "controls": {
+    "control1": [
+    ]
+  }
+}
