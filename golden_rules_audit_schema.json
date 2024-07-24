@@ -19,12 +19,12 @@
     "organisation": {
       "type": "string",
       "title": "nom socle/cluster",
-      "enum": ["cagip", "bcr", "bpc"]
+      "enum": ["ndc", "dc", "sri", "cyb", "dwp", "opn", "z", "bcr", "bpc", "cp", "gea", "grc", "sfs"]
     },
     "entite": {
       "type": "string",
       "title": "nom entite",
-      "enum": ["cats", "lcl"]
+      "enum": ["bfb", "caa", "cacf", "cacf-corp","cacib","cagip","cagip-admin", "calf", "caps", "casa", "cats", "lcl"]
     },
     "zone": {
       "type": "string",
