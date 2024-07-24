@@ -28,6 +28,16 @@ class TestPassing:
             j = json.load(f)
         validate(instance=j, schema=schema)
 
+    def test_backslash(self, schema):
+        with open('tests/example-pass--backslash.json', 'r') as f:
+            j = json.load(f)
+        validate(instance=j, schema=schema)
+
+    def test_asciichars(self, schema):
+        with open('tests/example-pass--asciichars.json', 'r') as f:
+            j = json.load(f)
+        validate(instance=j, schema=schema)
+
 class TestInvalidFiles:
     def test_no_controls(self, schema):
         with open('tests/example-fail--nocontrols.json', 'r') as f:
